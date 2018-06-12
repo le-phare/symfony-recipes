@@ -18,8 +18,8 @@ Options FollowSymlinks
     # If the requested filename exists, simply serve it.
     # We only want to let Apache serve files and not directories.
     RewriteCond %{REQUEST_FILENAME} -f
-    RewriteRule ^ - [L]
+    RewriteRule ^ - [END]
 
     # Rewrite all other queries to the front controller.
-    RewriteRule ^ %{ENV:BASE}/index.php [L]
+    RewriteRule ^ %{ENV:BASE}/index.php [END]
 </IfModule>
